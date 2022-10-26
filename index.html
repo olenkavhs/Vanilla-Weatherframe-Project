@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather wireframe</title>
+  </head>
+  <body>
+    <div class="cotainer frame">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <p>Weather wireframe</p>
+              <h2><span id="date"></span></h2>
+            </div>
+            <div class="col">
+              <form class="row g-3 field" id="search-form">
+                <div class="col-auto">
+                  <input
+                    type="search"
+                    placeholder="Type a city.."
+                    autofocus="on"
+                    autocomplete="off"
+                    id="city-input"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col-4">
+                  <input
+                    type="submit"
+                    value="🔍"
+                    class="form-control btn btn-primary shadow-sm"
+                    id="search"
+                  />
+
+                  <button>Current</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="middle-frame">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-4">
+                      <h1><span class="city" id="city">Lviv</span></h1>
+                      <div class="temperature-today">
+                        <div>
+                          <span class="temperature-now" id="temper-now">
+                            18
+                          </span>
+                          <span class="units">
+                            <a href="#" class="celsius">°C</a>
+                            <a href="#" class="farengeit">°F</a>
+                          </span>
+                        </div>
+                        <div class="row"></div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>
+                            max
+                            <div class="max-min" id="max-temp">15°C</div>
+                          </h5>
+                        </div>
+                        <div class="col-6">
+                          <div class="image">
+                            <img
+                              src="image/cloudy.png"
+                              alt="Weather today"
+                              width="200"
+                            />
+                            <div class="image-word">Cloudy</div>
+                          </div>
+                        </div>
+                        <div class="col-3">
+                          <h5>
+                            min
+                            <div class="max-min" id="min-temp">8°C</div>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <ul>
+                        <li>💧 <span id="humidity-now"> 60</span>%</li>
+                        <li>💨 <span id="wind-speed"> 10</span>m/sec</li>
+                        <li>💨 <span id="wind-deg"> 10</span>°</li>
+                        <li>P <span id="pressure-now"> 6.00 </span>hPa</li>
+                        <li>👀<span id="visibility-now"> 2100 </span>m</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3>Today <span> 5days </span></h3>
+            <div class="five-days">
+              <div class="row">
+                <div class="col-2">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4>Monday</h4>
+                      <div class="date">September 12</div>
+                      <img
+                        src="image/sunny.png"
+                        class="small-image"
+                        alt="Weather image"
+                        width="50"
+                      />
+                      <div class="row">
+                        <div class="col-6">18°C</div>
+                        <div class="col-6">10°C</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4>Tuesday</h4>
+                      <div class="date">September 13</div>
+                      <img
+                        src="image/cloudy.png"
+                        class="small-image"
+                        alt="Weather image"
+                        width="65"
+                      />
+                      <div class="row">
+                        <div class="col-6">16°C</div>
+                        <div class="col-6">8°C</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4>Wednesday</h4>
+                      <div class="date">September 14</div>
+                      <img
+                        src="image/rainy.png"
+                        class="small-image"
+                        alt="Weather image"
+                        width="50"
+                      />
+                      <div class="row">
+                        <div class="col-6">18°C</div>
+                        <div class="col-6">9°C</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4>Thursday</h4>
+                      <div class="date">September 15</div>
+                      <img
+                        src="image/rainy.png"
+                        class="small-image"
+                        alt="Weather image"
+                        width="50"
+                      />
+                      <div class="row">
+                        <div class="col-6">17°C</div>
+                        <div class="col-6">7°C</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4>Friday</h4>
+                      <div class="date">September 16</div>
+                      <img
+                        src="image/cloudy.png"
+                        class="small-image"
+                        alt="Weather image"
+                        width="65"
+                      />
+                      <div class="row">
+                        <div class="col-6">15°C</div>
+                        <div class="col-6">7°C</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <small
+        ><a
+          href="https://github.com/olenkavhs/Weatherframe-project"
+          target="_blank"
+          >Open-source code</a
+        >, by Olena Vyshyvanyuk</small
+      >
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>

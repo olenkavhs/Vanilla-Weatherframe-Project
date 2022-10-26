@@ -1,0 +1,182 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+h1 {
+  font-size: 40px;
+  color: #5a6275;
+  font-weight: 900;
+  text-align: center;
+  margin: 20px auto 2px;
+}
+
+p {
+  font-size: 24px;
+  color: #939aa9;
+  padding: 0;
+  margin: 5px;
+}
+h2 {
+  font-size: 24px;
+  color: #5a6275;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #5a6275;
+  margin: 10px 10px 0 10px;
+  padding: 10px;
+}
+h4 {
+  font-size: 20px;
+  color: #5a6275;
+  font-weight: 600;
+  text-align: center;
+}
+
+h5 {
+  top: 40px;
+  position: relative;
+}
+ul {
+  list-style: none;
+  display: block;
+  margin: 20px auto;
+  padding: 0 20px 0 60px;
+  color: #5a6275;
+}
+button {
+  display: block;
+  border: 5px solid #bec2cb;
+  border-radius: 5px;
+  font-size: 17px;
+  color: white;
+  background-color: #bec2cb;
+  position: relative;
+  margin: 0;
+  padding: 4px 20px;
+  top: -42px;
+  left: -355px;
+}
+button:hover {
+  background-color: white;
+  color: #bec2cb;
+  cursor: pointer;
+}
+.image {
+  top: 0px;
+  left: -60px;
+  position: relative;
+}
+.image-word {
+  top: 0;
+  left: 90px;
+  position: relative;
+}
+.card {
+  background-color: #f2f2f4;
+  border: 5px solid #bec2cb;
+}
+.col .field {
+  padding: 5px;
+  top: 5px;
+  right: -100px;
+  position: relative;
+}
+span.units {
+  display: inline-block;
+  margin: 0;
+  padding-top: 0;
+  box-sizing: 0px;
+}
+.units .celsius,
+.units .farengeit {
+  font-size: 26px;
+  text-decoration: none;
+  font-weight: 200px;
+  color: #5a6275;
+}
+.units .farengeit {
+  border-left: 1px solid #d0d0d0;
+  padding-top: 0;
+  margin-top: 0;
+}
+.units .celsius {
+  padding-right: 0;
+  margin-right: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.units .celsius:hover,
+.units .farengeit:hover {
+  text-decoration: underline;
+}
+
+.temperature-today {
+  font-size: 46px;
+  color: #5a6275;
+  text-align: center;
+}
+.temper-now {
+  margin: o;
+  padding: 0;
+}
+
+.frame {
+  max-width: 900px;
+  max-height: 300px;
+  margin: 60px auto;
+  display: block;
+}
+.col-auto {
+  color: #5a6275;
+}
+.middle-frame {
+  color: #5a6275;
+}
+.col-2 {
+  margin: 0 14px 10px;
+  padding: 0;
+}
+.five-days {
+  margin: 5px;
+}
+.small-image {
+  display: block;
+  margin: 0 auto;
+}
+.date {
+  font-size: 13px;
+  color: #5a6275;
+  font-weight: lighter;
+  text-align: center;
+}
+.col-6 {
+  font-size: 15px;
+  color: #5a6275;
+}
+
+.form-control {
+  background-color: white;
+  border: 5px solid #bec2cb;
+}
+#city {
+  margin-bottom: 5px;
+}
+#search {
+  background-color: #bec2cb;
+  color: white;
+  width: 50px;
+  font-size: 22px;
+  margin: 0;
+  padding: 0 5px;
+  border: 5px solid #bec2cb;
+}
+#search:hover {
+  background-color: white;
+  color: #bec2cb;
+  cursor: pointer;
+}
