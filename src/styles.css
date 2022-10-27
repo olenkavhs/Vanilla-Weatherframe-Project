@@ -6,7 +6,7 @@ h1 {
   color: #5a6275;
   font-weight: 900;
   text-align: center;
-  margin: 20px auto 2px;
+  margin: 10px auto 10px;
 }
 
 p {
@@ -85,43 +85,30 @@ button:hover {
   right: -100px;
   position: relative;
 }
-span.units {
-  display: inline-block;
-  margin: 0;
-  padding-top: 0;
-  box-sizing: 0px;
-}
-.units .celsius,
 .units .farengeit {
-  font-size: 26px;
-  text-decoration: none;
-  font-weight: 200px;
-  color: #5a6275;
-}
-.units .farengeit {
-  border-left: 1px solid #d0d0d0;
+  border-left: 1px solid #bec2cb;
   padding-top: 0;
+  padding-left: 3px;
   margin-top: 0;
 }
-.units .celsius {
-  padding-right: 0;
+.temperature-today .celsius {
+  padding-right: 5px;
   margin-right: 0;
   padding-top: 0;
   margin-top: 0;
-}
-
-.units .celsius:hover,
-.units .farengeit:hover {
-  text-decoration: underline;
+  box-sizing: 0;
 }
 
 .temperature-today {
   font-size: 46px;
+  margin: 0;
+  padding-right: 0;
+
   color: #5a6275;
   text-align: center;
 }
 .temper-now {
-  margin: 5px auto;
+  margin: 0px auto;
   padding: 0;
 }
 
@@ -163,6 +150,25 @@ span.units {
   background-color: white;
   border: 5px solid #bec2cb;
 }
+.temper-now .units {
+  margin: 0 0 0 10px;
+  padding-top: 0;
+}
+.units .celsius,
+.units .farengeit {
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 100px;
+  color: #5a6275;
+  position: relative;
+  top: -17px;
+}
+
+.units .celsius:hover,
+.units .farengeit:hover {
+  text-decoration: underline;
+}
+
 #city {
   margin-bottom: 5px;
 }
