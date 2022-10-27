@@ -74,6 +74,7 @@ button:hover {
   top: 0;
   left: 90px;
   position: relative;
+  text-transform: capitalize;
 }
 .card {
   background-color: #f2f2f4;

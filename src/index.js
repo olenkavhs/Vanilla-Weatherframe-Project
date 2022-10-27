@@ -42,7 +42,6 @@ let apiKey = "1d82369e7ab48bdd7fe7a319024125d8";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
 
 function showTemperature(response) {
-  console.log(response);
   let temperature = Math.round(response.data.main.temp);
   temperatureElement.innerHTML = `${temperature}`;
   let tempMax = document.querySelector("#max-temp");
