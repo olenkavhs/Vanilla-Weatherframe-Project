@@ -75,10 +75,17 @@ button:hover {
   text-transform: capitalize;
   text-align: center;
 }
+.image-description {
+  display: block;
+  margin: 10px auto;
+}
 
 .card {
   border: 5px solid #bec2cb;
   background: none;
+}
+.card-body {
+  padding: 0;
 }
 
 .col .field {
