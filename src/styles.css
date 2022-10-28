@@ -8,6 +8,8 @@ h1 {
   font-weight: 900;
   text-align: center;
   margin: 10px auto 10px;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
 p {
@@ -94,6 +96,10 @@ button:hover {
   right: -100px;
   position: relative;
 }
+.span.units {
+  margin-left: 0;
+  padding-left: 0;
+}
 .units #farengeit {
   border-left: 1px solid #bec2cb;
   padding-top: 0;
@@ -107,7 +113,14 @@ button:hover {
   margin-top: 0;
   box-sizing: 0;
 }
-
+.temperature-now {
+  margin-right: 0;
+  padding-right: 0;
+}
+.weather-today {
+  display: block;
+  margin: 0px 80px;
+}
 .temperature-today {
   font-size: 46px;
   margin: 0;
@@ -116,8 +129,8 @@ button:hover {
   color: #5a6275;
   text-align: center;
 }
-.temper-now {
-  margin: 0px auto;
+#temper-now {
+  margin: 0;
   padding: 0;
   margin-right: 0;
 }
@@ -181,7 +194,7 @@ a#farengeit.active {
 
 .units #celsius,
 .units #farengeit {
-  font-size: 20px;
+  font-size: 15px;
   text-decoration: none;
   font-weight: 100px;
   color: #5a6275;
