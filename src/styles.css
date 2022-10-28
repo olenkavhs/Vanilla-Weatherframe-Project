@@ -1,6 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
 h1 {
   font-size: 40px;
   color: #5a6275;
@@ -65,21 +66,21 @@ button:hover {
   color: #bec2cb;
   cursor: pointer;
 }
-.image {
-  top: 0px;
-  left: -60px;
-  position: relative;
+#icon {
+  max-width: 100px;
+  margin: 5;
+  background-image: url(background.png);
 }
 .image-word {
-  top: 0;
-  left: 90px;
-  position: relative;
   text-transform: capitalize;
+  text-align: center;
 }
+
 .card {
-  background-color: #f2f2f4;
   border: 5px solid #bec2cb;
+  background: none;
 }
+
 .col .field {
   padding: 5px;
   top: 5px;
@@ -116,6 +117,7 @@ button:hover {
 .frame {
   max-width: 900px;
   max-height: 300px;
+
   margin: 60px auto;
   display: block;
 }
@@ -170,6 +172,10 @@ button:hover {
   text-decoration: underline;
 }
 
+#middle-frame {
+  background: none;
+}
+
 #city {
   margin-bottom: 5px;
 }
@@ -186,4 +192,7 @@ button:hover {
   background-color: white;
   color: #bec2cb;
   cursor: pointer;
+}
+#background {
+  background-image: url(background.png);
 }
