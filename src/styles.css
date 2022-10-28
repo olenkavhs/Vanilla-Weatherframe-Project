@@ -94,13 +94,13 @@ button:hover {
   right: -100px;
   position: relative;
 }
-.units .farengeit {
+.units #farengeit {
   border-left: 1px solid #bec2cb;
   padding-top: 0;
   padding-left: 3px;
   margin-top: 0;
 }
-.temperature-today .celsius {
+.temperature-today #celsius {
   padding-right: 5px;
   margin-right: 0;
   padding-top: 0;
@@ -119,6 +119,7 @@ button:hover {
 .temper-now {
   margin: 0px auto;
   padding: 0;
+  margin-right: 0;
 }
 
 .frame {
@@ -165,12 +166,21 @@ button:hover {
   background-color: white;
   border: 5px solid #bec2cb;
 }
-.temper-now .units {
-  margin: 0 0 0 10px;
+.temperature-today .units {
+  margin: 0;
   padding-top: 0;
 }
-.units .celsius,
-.units .farengeit {
+a#celsius.active {
+  color: blue;
+  font-weight: thick;
+}
+a#farengeit.active {
+  color: blue;
+  font-weight: thick;
+}
+
+.units #celsius,
+.units #farengeit {
   font-size: 20px;
   text-decoration: none;
   font-weight: 100px;
@@ -179,8 +189,8 @@ button:hover {
   top: -17px;
 }
 
-.units .celsius:hover,
-.units .farengeit:hover {
+.units #celsius:hover,
+.units #farengeit:hover {
   text-decoration: underline;
 }
 
