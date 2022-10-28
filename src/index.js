@@ -84,9 +84,6 @@ function handleCity(event) {
   changeCity(city);
 }
 
-let formCity = document.querySelector("#search-form");
-formCity.addEventListener("submit", handleCity);
-
 function retreivePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -97,8 +94,6 @@ function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(retreivePosition);
 }
-let button = document.querySelector("button");
-button.addEventListener("click", getCurrentPosition);
 
 function tempF(event) {
   event.preventDefault();
@@ -108,9 +103,7 @@ function tempF(event) {
   temperatureChangeC.classList.remove(`active`);
   temperatureChangeF.classList.add(`active`);
 }
-let temperatureChangeF = document.querySelector("#farengeit");
-temperatureChangeF.addEventListener("click", tempF);
-let celsiusTemperature = null;
+
 function tempC(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temper-now");
@@ -118,12 +111,15 @@ function tempC(event) {
   temperatureChangeC.classList.add(`active`);
   temperatureChangeF.classList.remove(`active`);
 }
+let temperatureChangeF = document.querySelector("#farengeit");
+temperatureChangeF.addEventListener("click", tempF);
+let celsiusTemperature = null;
+
+let button = document.querySelector("button");
+button.addEventListener("click", getCurrentPosition);
+
+let formCity = document.querySelector("#search-form");
+formCity.addEventListener("submit", handleCity);
+
 let temperatureChangeC = document.querySelector("#celsius");
 temperatureChangeC.addEventListener("click", tempC);
-
-//function tempC(event) {
-//event.preventDefault();
-//temperatureElement.innerHTML = `${currentTemperature}`;
-//}
-//let temperatureChangeC = document.querySelector(".celsius");
-//temperatureChangeC.addEventListener("click", tempC);
