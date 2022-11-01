@@ -33,7 +33,7 @@ h3 {
   padding: 10px;
 }
 h4 {
-  font-size: 20px;
+  font-size: 22px;
   color: #747b8c;
   font-weight: 600;
   text-align: center;
@@ -42,6 +42,7 @@ h4 {
 }
 
 h5 {
+  display: block;
   top: 40px;
   position: relative;
 }
@@ -98,16 +99,15 @@ button:hover {
   right: -100px;
   position: relative;
 }
-.span.units {
+small.units {
+  font-size: 20px;
   margin-left: 0;
   padding-left: 0;
+  margin-top: 20px;
+  position: relative;
+  top: 10px;
 }
-.units #farengeit {
-  border-left: 1px solid #bec2cb;
-  padding-top: 0;
-  padding-left: 3px;
-  margin-top: 0;
-}
+
 .temperature-today #celsius {
   padding-right: 5px;
   margin-right: 0;
@@ -193,6 +193,11 @@ button:hover {
 }
 .temp-forecast-max {
   color: #24272d;
+}
+temp-forecast-max,
+temp-forecast-min {
+  display: block;
+  text-align: center;
 }
 a#celsius.active {
   color: blue;

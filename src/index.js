@@ -73,7 +73,7 @@ function displayForecast(response) {
             <div class="col-6 temp-forecast-max">${Math.round(
               forecastDay.temperature.maximum
             )}°</div>
-            <div class="col-6" temp-forecast-min>${Math.round(
+            <div class="col-6 temp-forecast-min">${Math.round(
               forecastDay.temperature.minimum
             )}°</div>
           </div>
@@ -123,8 +123,8 @@ function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   citySearch.innerHTML = `${response.data.name.toUpperCase()}`;
   temperatureElement.innerHTML = `${temperature}`;
-  tempMax.innerHTML = `${temperatureMax}`;
-  tempMin.innerHTML = `${temperatureMin}`;
+  tempMax.innerHTML = `${temperatureMax}°`;
+  tempMin.innerHTML = `${temperatureMin}°`;
   description.innerHTML = response.data.weather[0].description;
 
   humidity.innerHTML = response.data.main.humidity;
@@ -159,31 +159,8 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(retreivePosition);
 }
 
-function tempF(event) {
-  event.preventDefault();
-
-  let far = celsiusTemperature * 1.8 + 32;
-  temperatureElement.innerHTML = `${Math.round(far)}`;
-  temperatureChangeC.classList.remove(`active`);
-  temperatureChangeF.classList.add(`active`);
-}
-
-function tempC(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temper-now");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  temperatureChangeC.classList.add(`active`);
-  temperatureChangeF.classList.remove(`active`);
-}
-let temperatureChangeF = document.querySelector("#farengeit");
-temperatureChangeF.addEventListener("click", tempF);
-let celsiusTemperature = null;
-
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
 
 let formCity = document.querySelector("#search-form");
 formCity.addEventListener("submit", handleCity);
-
-let temperatureChangeC = document.querySelector("#celsius");
-temperatureChangeC.addEventListener("click", tempC);
