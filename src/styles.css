@@ -37,6 +37,8 @@ h4 {
   color: #747b8c;
   font-weight: 600;
   text-align: center;
+  margin-bottom: 0;
+  margin-top: 5px;
 }
 
 h5 {
@@ -162,7 +164,11 @@ button:hover {
 }
 .small-image {
   display: block;
+  padding: 0;
   margin: 0 auto;
+  margin-top: 0;
+  padding-top: 0;
+  box-sizing: initial;
 }
 .date {
   font-size: 13px;
@@ -171,9 +177,10 @@ button:hover {
   text-align: center;
 }
 .col-6 {
-  font-size: 15px;
+  font-size: 18px;
   color: #5a6275;
   text-align: center;
+  margin: 0 auto;
 }
 
 .form-control {
