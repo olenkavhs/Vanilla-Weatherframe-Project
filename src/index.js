@@ -42,10 +42,10 @@ let apiKey = "1d82369e7ab48bdd7fe7a319024125d8";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
 
 function displayForecast(response) {
-  console.log(response.data);
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let days = ["sun", "mon", "tue"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -63,7 +63,7 @@ function displayForecast(response) {
           />
           <div class="row">
             <div class="col-6 temp-forecast-max">18°C</div>
-            <div class="col-6">10°C</div>
+            <div class="col-6">12°C</div>
           </div>
         </div>
       </div>
@@ -76,9 +76,9 @@ function displayForecast(response) {
 }
 function getForecast(coordinates) {
   console.log(coordinates);
+  let apiKey = `o3a69ab74905974ad5cf94debte8cfc8`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=${units}`;
 
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
