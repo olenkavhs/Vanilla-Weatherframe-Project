@@ -67,7 +67,7 @@ function displayForecast(response) {
             src=${forecastDay.condition.icon_url}
             class="small-image"
             alt="Weather image"
-            width="80"
+            width="70"
           />
           <div class="row">
             <div class="col-6 temp-forecast-max">${Math.round(
