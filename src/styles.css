@@ -183,6 +183,9 @@ button:hover {
   margin: 0;
   padding-top: 0;
 }
+.temp-forecast-max {
+  color: #24272d;
+}
 a#celsius.active {
   color: blue;
   font-weight: thick;
