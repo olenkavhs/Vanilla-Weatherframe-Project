@@ -94,15 +94,26 @@ function getForecast(coordinates) {
 
   axios.get(apiUrl).then(displayForecast);
 }
+function displayIcon(response) {
+  console.log(response);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `${response.data.condition.icon_url}`);
+}
+function getIcon(coordinates) {
+  let apiKey = `o3a69ab74905974ad5cf94debte8cfc8`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayIcon);
+}
 
 function showTemperature(response) {
+  console.log(response);
   let temperature = Math.round(response.data.main.temp);
   let tempMax = document.querySelector("#max-temp");
   let temperatureMax = Math.round(response.data.main.temp_max);
   let tempMin = document.querySelector("#min-temp");
   let temperatureMin = Math.round(response.data.main.temp_min);
   let description = document.querySelector(".image-word");
-  let iconElement = document.querySelector("#icon");
+
   let humidity = document.querySelector("#humidity-now");
   let windSpeed = document.querySelector("#wind-speed");
   let windDeg = document.querySelector("#wind-deg");
@@ -115,16 +126,14 @@ function showTemperature(response) {
   tempMax.innerHTML = `${temperatureMax}`;
   tempMin.innerHTML = `${temperatureMin}`;
   description.innerHTML = response.data.weather[0].description;
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+
   humidity.innerHTML = response.data.main.humidity;
   windSpeed.innerHTML = response.data.wind.speed;
   windDeg.innerHTML = response.data.wind.deg;
   pressure.innerHTML = response.data.main.pressure;
   vis.innerHTML = response.data.visibility;
   getForecast(response.data.coord);
+  getIcon(response.data.coord);
 }
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 
@@ -142,7 +151,7 @@ function handleCity(event) {
 function retreivePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
 function getCurrentPosition(event) {
