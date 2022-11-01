@@ -173,6 +173,7 @@ button:hover {
 .col-6 {
   font-size: 15px;
   color: #5a6275;
+  text-align: center;
 }
 
 .form-control {
