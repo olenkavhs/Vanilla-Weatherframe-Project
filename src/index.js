@@ -41,6 +41,47 @@ let units = "metric";
 let apiKey = "1d82369e7ab48bdd7fe7a319024125d8";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
 
+function displayForecast(response) {
+  console.log(response.data);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+      <div class="card">
+        <div class="card-body">
+          <h4>${day}</h4>
+          <div class="date">Sep 12</div>
+          <img
+            src="image/sunny.png"
+            class="small-image"
+            alt="Weather image"
+            width="50"
+          />
+          <div class="row">
+            <div class="col-6 temp-forecast-max">18°C</div>
+            <div class="col-6">10°C</div>
+          </div>
+        </div>
+      </div>
+    
+  </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let tempMax = document.querySelector("#max-temp");
@@ -70,6 +111,7 @@ function showTemperature(response) {
   windDeg.innerHTML = response.data.wind.deg;
   pressure.innerHTML = response.data.main.pressure;
   vis.innerHTML = response.data.visibility;
+  getForecast(response.data.coord);
 }
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 
