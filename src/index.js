@@ -36,7 +36,7 @@ let month = months[now.getMonth()];
 h2.innerHTML = `${day}, ${month} ${date}  ${hours}:${minutes}`;
 let temperatureElement = document.querySelector(`#temper-now`);
 let currentTemperature = temperatureElement.innerHTML;
-let city = "Lviv";
+let city = "Paris";
 let units = "metric";
 let apiKey = "1d82369e7ab48bdd7fe7a319024125d8";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
@@ -69,13 +69,13 @@ function displayForecast(response) {
             alt="Weather image"
             width="70"
           />
-          <div class="row">
-            <div class="col-6 temp-forecast-max">${Math.round(
+          <div class="forecast-temp">
+            <span class="col-6 temp-forecast-max">${Math.round(
               forecastDay.temperature.maximum
-            )}°</div>
-            <div class="col-6 temp-forecast-min">${Math.round(
+            )}°</span>
+            <span class="col-6 temp-forecast-min">${Math.round(
               forecastDay.temperature.minimum
-            )}°</div>
+            )}°</span>
           </div>
         </div>
       </div>

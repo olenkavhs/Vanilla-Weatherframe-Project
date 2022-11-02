@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 38px;
   color: #747b8c;
   font-weight: 900;
   text-align: center;
@@ -116,6 +116,7 @@ small.units {
   box-sizing: 0;
 }
 .temperature-now {
+  text-align: center;
   margin-right: 0;
   padding-right: 0;
 }
@@ -125,6 +126,7 @@ small.units {
 }
 .temperature-today {
   font-size: 46px;
+  text-align: center;
   margin: 0;
   padding-right: 0;
 
@@ -132,6 +134,7 @@ small.units {
   text-align: center;
 }
 #temper-now {
+  text-align: center;
   margin: 0;
   padding: 0;
   margin-right: 0;
@@ -193,34 +196,20 @@ small.units {
 }
 .temp-forecast-max {
   color: #24272d;
+  margin-right: 5px;
 }
-temp-forecast-max,
-temp-forecast-min {
-  display: block;
+.forecast-temp {
   text-align: center;
-}
-a#celsius.active {
-  color: blue;
-  font-weight: thick;
-}
-a#farengeit.active {
-  color: blue;
-  font-weight: thick;
+  padding: 0;
 }
 
-.units #celsius,
-.units #farengeit {
+.units #celsius {
   font-size: 15px;
   text-decoration: none;
   font-weight: 100px;
   color: #5a6275;
   position: relative;
   top: -17px;
-}
-
-.units #celsius:hover,
-.units #farengeit:hover {
-  text-decoration: underline;
 }
 
 #middle-frame {
